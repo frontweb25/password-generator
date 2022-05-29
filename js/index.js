@@ -3,7 +3,11 @@ const dom = {
          button: document.querySelector('#button'),
          outPassword: document.querySelector('#password'),
      passwordSetings: {
-         length: document.querySelector('#length')
+         length: document.querySelector('#length'),
+         uppercase: document.querySelector('#uppercase'),
+         numbers: document.querySelector('#numbers'),
+         symbols: document.querySelector('#symbols'),
+
      }
 };
 
@@ -14,7 +18,7 @@ const data = {
         down: 'abcdefghijklmnopqrstuvwxyz'
     },
     numbers: '0123456789',
-    simbols: '!@#$%^&*()_-+={}[]/|?,.<>:;'
+    symbols: '!@#$%^&*()_-+={}[]/|?<>:;'
 };
 
 //функция генерации рандомного числа
@@ -42,9 +46,29 @@ function paswordGenerator(symbols, length) {
 
 dom.button.onclick = () => {
     const passwordLength = dom.passwordSetings.length.value;
-    const readyPassword =  paswordGenerator(data.letters.down, passwordLength);
+    
+
+    const uppercase = dom.passwordSetings.uppercase;
+    const numbers = dom.passwordSetings.numbers;
+    const symbols = dom.passwordSetings.symbols;
+    let string = data.letters.down;
+   
+    
+    if(uppercase.checked) {
+        string += data.letters.up;
+    }
+    if(numbers.checked) {
+        string += data.numbers;
+    }
+    if(symbols.checked) {
+        string += data.symbols;
+    }
+
+    const readyPassword =  paswordGenerator(string, passwordLength);
     dom.outPassword.innerHTML = readyPassword;
-    console.log(readyPassword)
+    if(readyPassword.length > 20) {
+        dom.outPassword.innerHTML = 'Слишком длинный пароль';
+    }
 };
 
 

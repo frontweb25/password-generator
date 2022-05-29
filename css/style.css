@@ -25,11 +25,9 @@ body {
     padding: 32px;
     border-radius: 8px;
     text-align: center;
+    width: 500px;
 }
 
-.generator__title {
-
-}
 
 .generator__content {
     margin-top: 16px;
@@ -47,6 +45,8 @@ body {
     justify-content: center;
     font-size: 32px;
     font-weight: 200;
+    overflow: hidden;
+    word-break: break-all;
 }
 .generator__button {
     margin-top: 16px;
@@ -115,7 +115,13 @@ body {
     display: grid;
     grid-template-rows: repeat(3, 1fr);
     background-color: var(--glass_black);
+    user-select: none;
+    align-items: center;
 }
 .generator__setings-container input {
-    
+    margin-right: 5px;
+}
+  
+.generator__setings-container label {
+   font-weight: 300;
 }   
