@@ -1,11 +1,12 @@
 
-
 const dom = {
-     button: document.querySelector('#button'),
-     input: document.querySelector('#input')
+         button: document.querySelector('#button'),
+         password: document.querySelector('#password'),
+     passwordSetings: {
+         length: document.querySelector('#length')
+     }
 };
 
-console.log(dom)
 
 const data = {
     letters: {
@@ -36,8 +37,13 @@ function paswordGenerator(symbols, length) {
     }
     return password; 
 }
-const readyPassword =  paswordGenerator(data.letters.down, 10);
-console.log(readyPassword);
 
+
+
+dom.button.onclick = () => {
+    const passwordLength = dom.passwordSetings.length.value;
+    const readyPassword =  paswordGenerator(data.letters.down, passwordLength);
+    dom.password.innerHTML = readyPassword;
+};
 
 
