@@ -1,7 +1,7 @@
 
 const dom = {
          button: document.querySelector('#button'),
-         password: document.querySelector('#password'),
+         outPassword: document.querySelector('#password'),
      passwordSetings: {
          length: document.querySelector('#length')
      }
@@ -43,7 +43,8 @@ function paswordGenerator(symbols, length) {
 dom.button.onclick = () => {
     const passwordLength = dom.passwordSetings.length.value;
     const readyPassword =  paswordGenerator(data.letters.down, passwordLength);
-    dom.password.innerHTML = readyPassword;
+    dom.outPassword.innerHTML = readyPassword;
+    console.log(readyPassword)
 };
 
 

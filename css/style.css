@@ -76,6 +76,11 @@ body {
     font-weight: 800;
     margin-bottom: 8px;
 }
+.generator__setings-title_small{
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 8px;
+}
 
 .generator__setings-content {
     text-align: left;
@@ -103,3 +108,14 @@ body {
     outline: none;
 
 }
+
+.generator__setings-container{
+    padding: 8px;
+    border-radius: 4px;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    background-color: var(--glass_black);
+}
+.generator__setings-container input {
+    
+}   

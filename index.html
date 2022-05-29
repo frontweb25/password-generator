@@ -18,13 +18,23 @@
             <div class="generator__setings-title">Настройки пароля</div>
             <div class="generator__setings-content">
                 <div>
-                    <label class="generator__setings-name">Длинна</label>
-                    <input id="length" 
-                    type="number" 
-                    class="generator__setings-input" 
-                    value="10"
-                    min="1"
-                    max="10"
+                    <label class="generator__setings-name">Длина</label>
+                    <input id="length" type="number"class="generator__setings-input" value="10" min="1"max="10"
+                </div>
+                <div class="generator__setings-title_small">Включать в пароль</div>
+                <div class="generator__setings-container">
+                    <div>
+                        <input id="uppercase" type="checkbox">
+                        <label>Заглавные</label>
+                    </div>
+                    <div>
+                        <input id="numbers" type="checkbox">
+                        <label>Числа</label>
+                    </div>
+                    <div>
+                        <input id="symbols" type="checkbox">
+                        <label>Спец символы</label>
+                    </div>
                 </div>
             </div>
         </div>
